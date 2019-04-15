@@ -44,9 +44,11 @@ springcloud的学习记录和demo工程
 
 
 ## 阶段二：服务消费者：rest+ribbon+feign
+
             微服务架构中，业务都会被拆分成一个独立的服务，服务与服务的通讯是基于http restful的。
             Spring cloud有两种服务调用方式，一种是ribbon+restTemplate，另一种是feign。
 
+### 负载均衡服务 ribbon
 创建一个新的客户端ribbon，选择cloud discovery中的eureka discovery，以及web,建立一套controller和service。
 启动类中添加@EnableDiscoveryClient，并引入RestTemplate,为了一会调用服务。
 
