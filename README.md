@@ -1,7 +1,7 @@
 # springcloud-study
 springcloud的学习记录和demo工程
 
-## 阶段一：创建服务和客户端（Eureka）
+## 阶段一：服务的创建(server)和发现（client）：Eureka
       大致了解springcloud，知道它是一个构建微服务架构的工具后，就可以开始创建这些来练手了。
       
 ### 创建Eureka server
@@ -43,5 +43,7 @@ springcloud的学习记录和demo工程
 对应代码中的eurekaclient
 
 
+## 阶段二：服务消费者：rest+ribbon+feign
+            微服务架构中，业务都会被拆分成一个独立的服务，服务与服务的通讯是基于http restful的。Spring cloud有两种服务调用方式，一种是ribbon+restTemplate，另一种是feign。
 
 
