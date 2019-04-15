@@ -1,5 +1,5 @@
 # springcloud-study
-springcloud的学习记录和demo工程
+springcloud的学习记录和demo工程。基于https://github.com/forezp/SpringCloudLearning的实践
 
 ## 阶段一：服务的创建(server)和发现（client）：Eureka
       大致了解springcloud，知道它是一个构建微服务架构的工具后，就可以开始创建这些来练手了。
