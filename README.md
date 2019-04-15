@@ -44,6 +44,26 @@ springcloud的学习记录和demo工程
 
 
 ## 阶段二：服务消费者：rest+ribbon+feign
-            微服务架构中，业务都会被拆分成一个独立的服务，服务与服务的通讯是基于http restful的。Spring cloud有两种服务调用方式，一种是ribbon+restTemplate，另一种是feign。
+            微服务架构中，业务都会被拆分成一个独立的服务，服务与服务的通讯是基于http restful的。
+            Spring cloud有两种服务调用方式，一种是ribbon+restTemplate，另一种是feign。
 
+创建一个新的客户端ribbon，选择cloud discovery中的eureka discovery，以及web,建立一套controller和service。
+启动类中添加@EnableDiscoveryClient，并引入RestTemplate,为了一会调用服务。
 
+            @Bean
+            @LoadBalanced
+            RestTemplate restTemplate() {
+                  return new RestTemplate();
+            }
+
+在service实现中，通过如下形式，调用服务：
+
+            restTemplate.getForObject("http://CLIENTHI/hi?name="+name,String.class)
+即：/**
+   * 通过之前注入ioc容器的restTemplate来消费service-hi服务的“/hi”接口，
+   * 在这里我们直接用的程序名替代了具体的url地址，
+   * 在ribbon中它会根据服务名来选择具体的服务实例，根据服务实例在请求的时候会用具体的url替换掉服务名
+   */
+
+启动多个CLIENTHI，启动ribbon后，访问设定的controller路径，可以验证：ribbon是一个负载均衡客户端，可以很好的控制htt和tcp的一些行为。
+对应代码：ribbon_server
