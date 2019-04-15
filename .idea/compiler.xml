@@ -8,9 +8,13 @@
         <outputRelativeToContentRoot value="true" />
         <module name="eureka_server" />
         <module name="eurekaclient" />
+        <module name="ribbon_server" />
         <module name="spcloud" />
         <module name="springcloud" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ribbonserver" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
