@@ -34,7 +34,7 @@ springcloud的学习记录和demo工程
                 serviceUrl:
                   defaultZone: http://localhost:8765/eureka/
             server:
-              port: 8765
+              port: 8083
             spring:
               application:
                 name: demo
